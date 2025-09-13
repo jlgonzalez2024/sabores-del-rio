@@ -1,0 +1,19 @@
+from flask import Flask
+
+# Crea una instancia de la aplicación Flask
+app = Flask(__name__)
+
+# Define la ruta principal (/)
+@app.route('/')
+def home():
+    return '¡Hola, mundo desde Flask! Esta es la página de inicio.'
+
+# Define una segunda ruta para la página "Acerca de"
+@app.route('/about')
+def about():
+    return 'Esta es la página "Acerca de".'
+
+# Bloque para ejecutar la aplicación
+if __name__ == '__main__':
+    # El modo debug=True permite recargar el servidor automáticamente al guardar cambios
+    app.run(debug=True)
